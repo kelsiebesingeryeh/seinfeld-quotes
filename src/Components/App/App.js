@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import {getAllQuotes} from '../../apiCalls'
+import Quotes from '../Quotes/Quotes'
 
 
-function App() {
+const App = () => {
+  
   const [quotes, setQuotes] = useState([])
   const [error, setError] = useState('')
   
   const getQuotes = async () => {
-    const error = 'An Error Has Occured'
+    const error = 'An Error Has occurred'
     try {
       const quotes = await getAllQuotes()
       setQuotes(quotes)
@@ -24,6 +26,8 @@ function App() {
   return (
     <div className="App">
         <h1>Seinfeld Quotes</h1>
+        <h2>Let's Play</h2>
+        {/* <Quotes /> */}
     </div>
   )
 }
